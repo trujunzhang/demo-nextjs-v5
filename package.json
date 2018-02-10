@@ -23,7 +23,8 @@
     "test:verbose": "./node_modules/.bin/jest --verbose",
     "test:watch": "./node_modules/.bin/jest --watch",
     "test:coverage": "npm test -- --coverage --no-cache",
-    "test:coverage:view": "npm test -- --coverage --no-cache && open coverage/lcov-report/index.html"
+    "test:coverage:view": "npm test -- --coverage --no-cache && open coverage/lcov-report/index.html",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
     "@types/enzyme": "^3.1.8",
@@ -38,6 +39,7 @@
     "node-sass": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "tslint": "^5.9.1",
     "typescript": "^2.7.1",
     "typescript-babel-jest": "^1.0.5"
   }
