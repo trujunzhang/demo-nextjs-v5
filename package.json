@@ -16,7 +16,7 @@
   "scripts": {
     "analyze": "cross-env ANALYZE=1 npm run build",
     "dev": "npm run build && node server.js -p $PORT",
-    "prebuild": "cp ./server.js .next/server.js",
+    "postbuild": "cp ./server.js .next/server.js && cp -r static .next/static",
     "build": "next build",
     "start": "npm run build && NODE_ENV=production node server.js -p $PORT",
     "test": "./node_modules/.bin/jest --no-cache",
