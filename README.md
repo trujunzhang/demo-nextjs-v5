@@ -13,6 +13,8 @@ This is a simple demo to explore NextJS v5 with support for:
 
 This project even uses [tslint](https://palantir.github.io/tslint/) and [pre-commit](https://www.npmjs.com/package/pre-commit) to make sure the code is clean before a commit can even occur.
 
+A [demo](https://demo-nextjs5.herokuapp.com/) of this project can be viewed on [Heroku](https://demo-nextjs5.herokuapp.com/) at [https://demo-nextjs5.herokuapp.com/](https://demo-nextjs5.herokuapp.com/)
+
 ## Key features
 There are a few key things that I wanted to achieve with this demo:
 
@@ -197,7 +199,11 @@ If you are familiar with this process, here is how you would create a new app on
 
 To deploy your app to Heroku, you can use the quick helper script I created. This script has the benefit of determining what branch you are on, and automatically deploying that as the master branch to your Heroku app:
 
-    $ npm run deploy
+    $ npm run deploy:heroku
+
+Note that there is a simpler script - `npm run deploy` - that is an alias to the Heroku command above. This is for convenience; and will allow easier changes in the future if the deploy target should be something other than Heroku.
+
+We also have a script - `heroku-postbuild` - that needs to be included when deploying to Heroku. This will run the build script for our app (again) on the Heroku dyno itself.
 
 # Feedback
 Please feel free to [create an issue](https://github.com/TheRobBrennan/demo-nextjs-v5/issues) if you have a question or idea for this project.
