@@ -26,6 +26,22 @@ export class Redux extends React.Component<Props> {
             {JSON.stringify(this.props)}
           </pre>
         </div>
+        <style>{`
+        img {
+          width: 300px;
+          height: 300px;
+          }
+        h1 {
+          font-family: Arial;
+        }
+        .myDiv {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+        }
+      `}</style>      
       </App>
     );
   }

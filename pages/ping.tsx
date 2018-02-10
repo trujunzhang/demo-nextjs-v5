@@ -1,4 +1,3 @@
-import './ping.scss';
 import App from '../components/App/App';
 
 export namespace Ping {
@@ -15,6 +14,22 @@ export default (props: Ping.Props) => {
           {JSON.stringify(props)}
         </pre>
       </div>
+      <style>{`
+        img {
+          width: 300px;
+          height: 300px;
+          }
+        h1 {
+          font-family: Arial;
+        }
+        .myDiv {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+        }
+      `}</style>      
     </App>
   );
 };
