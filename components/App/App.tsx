@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default ({ children }) => {
   return (
@@ -13,7 +13,7 @@ export default ({ children }) => {
           Please see the link below for more information:
           https://github.com/zeit/next-plugins/tree/master/packages/next-sass#production-usage
         */}
-        <link rel='stylesheet' href='/_next/static/style.css' />
+        <link rel="stylesheet" href="/_next/static/style.css" />
       </Head>
       <Link href={'/'}><a>Home</a></Link>&nbsp;
         <Link as={`/people`} href={`/ping`}>
@@ -27,5 +27,5 @@ export default ({ children }) => {
       </Link>&nbsp;
       {children}
     </div>
-  )
-}
+  );
+};
