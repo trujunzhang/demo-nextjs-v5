@@ -1,27 +1,18 @@
-/*
-  TODO: Why does this test work with NextJS 4 but not NextJS 5????????
-*/
-// import { shallow } from 'enzyme';
-// import { Redux } from './redux';
-// import Enthusiasm, { Props } from '../redux/enthusiasm/types/enthusiasm';
-
-// describe('The main Redux page', () => {
-//   it('should render', () => {
-//     const mockEnthusiasm: Enthusiasm = {
-//       languageName: 'JavaScript',
-//       enthusiasmLevel: 1
-//     };
-//     const mockProps: Props = {
-//       name: 'Test',
-//       enthusiasm: mockEnthusiasm
-//     };
-//     const wrapper = shallow(<Redux {...mockProps} />);
-//     expect(wrapper).toBeDefined();
-//   });
-// });
+import { shallow } from 'enzyme';
+import { Redux } from './redux';
+import Enthusiasm, { Props } from '../redux/enthusiasm/types/enthusiasm';
 
 describe('The main Redux page', () => {
-  it('cannot be tested until further investigation with NextJS 5 and next-redux-wrapper', () => {
-    expect(true).toEqual(true);
+  it('should render', () => {
+    const mockEnthusiasm: Enthusiasm = {
+      languageName: 'JavaScript',
+      enthusiasmLevel: 1
+    };
+    const mockProps: Props = {
+      name: 'Test',
+      enthusiasm: mockEnthusiasm
+    };
+    const wrapper = shallow(<Redux {...mockProps} />);
+    expect(wrapper).toBeDefined();
   });
 });

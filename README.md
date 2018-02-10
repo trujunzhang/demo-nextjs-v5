@@ -8,9 +8,7 @@ This is a simple demo to explore NextJS v5 with support for:
 This project even uses `tslint` to make sure the code is clean before a commit can even occur.
 
 KNOWN ISSUES:
-+ NextJS v5 is currently in its early preview stages. DO NOT USE this for production...yet.
-+ SCSS is working for dev mode but NOT for production
-+ Redux is connected and works within the app; but it DOES NOT WORK with simple testing...why? `pages/redux.test.tsx` has a test that calls attention to this for the time being.
++ SCSS has a bug which only retains the last processed SCSS file. Currently discussing this with Zeit.
 
 ## Development
 To verify NextJS is running in development mode, you can simply run:
@@ -54,36 +52,44 @@ Similar to `npm run test`, this script will run any file(s) that matches the pat
 This script should be your best friend. It will quietly sit in the background as you make changes and run tests that are affiliated with any and all files you modify.
 
 #### npm run test:coverage
-This script will allow you to see how much test coverage you have for your project. The goal of this project is to strive for 100% coverage. Certain files will be excluded from this report (see `jest-config.js`).
+This script will allow you to see how much test coverage you have for your project. Certain files may be excluded from this report (see `collectCoverageFrom` in `jest-config.js`) for more details.
 
 ```sh
 
- PASS  pages/redux.test.tsx
  PASS  redux/enthusiasm/actions/index.test.tsx
  PASS  redux/enthusiasm/reducers/index.test.tsx
- PASS  pages/index.test.tsx
+ PASS  redux/store/index.test.tsx
  PASS  pages/ping.test.tsx
---------------------------|----------|----------|----------|----------|----------------|
-File                      |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
---------------------------|----------|----------|----------|----------|----------------|
-All files                 |      100 |      100 |      100 |      100 |                |
- components/App           |      100 |      100 |      100 |      100 |                |
-  App.tsx                 |      100 |      100 |      100 |      100 |                |
- pages                    |      100 |      100 |      100 |      100 |                |
-  index.tsx               |      100 |      100 |      100 |      100 |                |
-  ping.tsx                |      100 |      100 |      100 |      100 |                |
- redux/enthusiasm/actions |      100 |      100 |      100 |      100 |                |
-  index.tsx               |      100 |      100 |      100 |      100 |                |
- redux/enthusiasm/types   |      100 |      100 |      100 |      100 |                |
-  enthusiasm.ts           |      100 |      100 |      100 |      100 |                |
-  initialState.ts         |      100 |      100 |      100 |      100 |                |
---------------------------|----------|----------|----------|----------|----------------|
+ PASS  pages/index.test.tsx
+ PASS  pages/redux.test.tsx
+---------------------------|----------|----------|----------|----------|----------------|
+File                       |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+---------------------------|----------|----------|----------|----------|----------------|
+All files                  |    90.85 |     72.5 |    88.89 |    95.92 |                |
+ components/App            |      100 |      100 |      100 |      100 |                |
+  App.tsx                  |      100 |      100 |      100 |      100 |                |
+ pages                     |    91.76 |    69.39 |    88.89 |    90.91 |                |
+  index.tsx                |      100 |      100 |      100 |      100 |                |
+  ping.tsx                 |      100 |      100 |      100 |      100 |                |
+  redux.tsx                |    89.23 |    63.41 |    85.71 |     87.5 |          31,36 |
+ redux/enthusiasm/actions  |      100 |      100 |      100 |      100 |                |
+  index.tsx                |      100 |      100 |      100 |      100 |                |
+ redux/enthusiasm/reducers |    75.86 |    68.42 |    66.67 |      100 |                |
+  index.tsx                |    75.86 |    68.42 |    66.67 |      100 |            1,4 |
+ redux/enthusiasm/types    |      100 |      100 |      100 |      100 |                |
+  enthusiasm.ts            |      100 |      100 |      100 |      100 |                |
+  initialState.ts          |      100 |      100 |      100 |      100 |                |
+ redux/store               |      100 |     87.5 |      100 |      100 |                |
+  index.tsx                |      100 |     87.5 |      100 |      100 |              5 |
+  root-action.ts           |      100 |      100 |      100 |      100 |                |
+  root-reducer.ts          |      100 |      100 |      100 |      100 |                |
+  root-state.ts            |      100 |      100 |      100 |      100 |                |
+---------------------------|----------|----------|----------|----------|----------------|
 
-Test Suites: 5 passed, 5 total
-Tests:       10 passed, 10 total
+Test Suites: 6 passed, 6 total
+Tests:       13 passed, 13 total
 Snapshots:   0 total
-Time:        3.56s
-Ran all test suites.
+Time:        4.385s
 ```
 
 #### npm run test:coverage:view
