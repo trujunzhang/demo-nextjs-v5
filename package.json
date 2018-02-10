@@ -30,7 +30,10 @@
     "deploy:force": "npm run deploy:heroku:force",
     "deploy:heroku": "git push heroku $(git rev-parse --abbrev-ref HEAD):master",
     "deploy:heroku:force": "git push -f heroku $(git rev-parse --abbrev-ref HEAD):master",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "heroku:bash": "heroku run bash",
+    "heroku:logs": "heroku logs",
+    "heroku:logs:tail": "heroku logs -t"
   },
   "pre-commit": [
     "tslint"
