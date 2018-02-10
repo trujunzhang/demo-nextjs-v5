@@ -26,7 +26,7 @@
     "test:coverage": "npm test -- --coverage --no-cache",
     "test:coverage:view": "npm test -- --coverage --no-cache && open coverage/lcov-report/index.html",
     "tslint": "./node_modules/.bin/tslint -c tslint.json -p tsconfig.json",
-    "deploy": "npm run deploy:heroku",
+    "deploy": "time npm run deploy:heroku && npm run heroku:logs:tail",
     "deploy:force": "npm run deploy:heroku:force",
     "deploy:heroku": "git push heroku $(git rev-parse --abbrev-ref HEAD):master",
     "deploy:heroku:force": "git push -f heroku $(git rev-parse --abbrev-ref HEAD):master",
