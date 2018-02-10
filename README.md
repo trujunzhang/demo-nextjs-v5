@@ -1,14 +1,15 @@
 # Welcome
 This is a simple demo to explore NextJS v5 with support for:
-+ Jest / Enzyme
-+ Redux
-+ TypeScript
-+ Webpack
-    
++ [Jest](https://facebook.github.io/jest/) / [Enzyme](http://airbnb.io/enzyme/)
++ [Redux](https://redux.js.org)
++ [TypeScript](https://www.typescriptlang.org)
++ [Webpack](https://webpack.js.org)
+
 This project even uses `tslint` to make sure the code is clean before a commit can even occur.
 
 ## Development
 To verify NextJS is running in development mode, you can simply run:
+
     $ npm run dev
 
 To verify the ExpressJS server is running in development mode, you should be able to see a response from [http://localhost:3000/test](http://localhost:3000/test) to verify the back-end Express server is running.
@@ -16,7 +17,6 @@ To verify the ExpressJS server is running in development mode, you should be abl
 ### What's in the bundle?
 This project includes a helper script that will enable you to interactively explore what is contained within your production app. Simply run:
 
-#### Bundle size
 ```sh
 $ npm run analyze
 ```
@@ -25,9 +25,7 @@ This will generate an interactive tool to see what the generated bundles for you
 ![Bundle Analysis](static/analyze.png)
 
 ### Testing
-This project uses [jest](https://facebook.github.io/jest/) and [enzyme](http://airbnb.io/enzyme/) for testing your React application - and should have 100% code coverage:
-
-If you are not seeing 100% code coverage, that is sad...truly sad. Let's figure out a way to make sure we have a testable design instead of some crap that "just works...until it doesn't."
+This project uses [jest](https://facebook.github.io/jest/) and [enzyme](http://airbnb.io/enzyme/) for testing your React application - and should have high levels of code coverage.
 
 For testing, we have the following scripts I have lovingly crafted in our main `package.json` file:
 
