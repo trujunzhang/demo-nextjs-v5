@@ -1,4 +1,4 @@
-import './ping.scss'
+import './ping.scss';
 import App from '../components/App/App';
 
 export namespace Ping {
