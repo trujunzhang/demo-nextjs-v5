@@ -32,6 +32,10 @@ app.prepare()
       return app.render(req, res, '/ping', req.query)
     })
 
+    server.get('/redux', (req, res) => { // SSR for the /redux page in NextJS
+      return app.render(req, res, '/redux', req.query)
+    })
+
     server.get('/test', (req, res) => { // Does not use NextJS app at all
       console.log('Express server solely responsible for processing GET /test')
       const result = { success: true, message: 'Back-end server is online.' }
