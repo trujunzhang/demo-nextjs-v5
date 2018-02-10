@@ -205,5 +205,95 @@ Note that there is a simpler script - `npm run deploy` - that is an alias to the
 
 We also have a script - `heroku-postbuild` - that needs to be included when deploying to Heroku. This will run the build script for our app (again) on the Heroku dyno itself.
 
+#### BONUS: Heroku CLI scripts
+Assuming you have the [Heroku command-line tool](https://devcenter.heroku.com/articles/heroku-cli) installed, there are additional scripts you may find useful:
+
++ heroku:bash
++ heroku:logs
++ heroku:logs:tail
+
+##### npm run heroku:bash
+This script will load a one-off dyno of your Heroku app. You will find this useful if you want to see what files are deployed to your app as well as the dyno itself. 
+
+When you are finished, simply type `exit`.
+
+In the example below, note that this dyno has been given an ID of 8505.
+
+```sh
+[Sat Feb 10 13:24:18] demo-nextjs-v5 $ npr heroku:bash
+
+> demo-nextjs-v5@0.0.0 heroku:bash /Users/rob/repos/demo-nextjs-v5
+> heroku run bash
+
+Running bash on ⬢ demo-nextjs5... up, run.8505 (Free)
+~ $ ls -al
+total 516
+drwx------  11 u33881 dyno   4096 Feb 10 21:28 .
+drwxr-xr-x  15 root   root   4096 Jan 23 18:33 ..
+-rw-------   1 u33881 dyno    237 Feb 10 21:14 .babelrc
+-rw-------   1 u33881 dyno     27 Feb 10 21:14 .gitignore
+drwx------   3 u33881 dyno   4096 Feb 10 21:14 .heroku
+drwx------   5 u33881 dyno   4096 Feb 10 21:15 .next
+drwx------   2 u33881 dyno   4096 Feb 10 21:14 .profile.d
+-rw-------   1 u33881 dyno      0 Feb 10 21:14 @1
+-rw-------   1 u33881 dyno     19 Feb 10 21:14 Procfile
+-rw-------   1 u33881 dyno  10054 Feb 10 21:14 README.md
+drwx------   2 u33881 dyno   4096 Feb 10 21:14 __mocks__
+drwx------   3 u33881 dyno   4096 Feb 10 21:14 components
+-rw-------   1 u33881 dyno    550 Feb 10 21:14 jest.config.js
+-rw-------   1 u33881 dyno    120 Feb 10 21:14 jest.setup.js
+-rw-------   1 u33881 dyno    461 Feb 10 21:14 next.config.js
+drwx------ 966 u33881 dyno  36864 Feb 10 21:15 node_modules
+-rw-------   1 u33881 dyno 396249 Feb 10 21:14 package-lock.json
+-rw-------   1 u33881 dyno   2185 Feb 10 21:14 package.json
+drwx------   2 u33881 dyno   4096 Feb 10 21:14 pages
+drwx------   4 u33881 dyno   4096 Feb 10 21:14 redux
+-rw-------   1 u33881 dyno   1658 Feb 10 21:14 server.js
+drwx------   2 u33881 dyno   4096 Feb 10 21:14 static
+-rw-------   1 u33881 dyno    531 Feb 10 21:14 tsconfig.json
+-rw-------   1 u33881 dyno   2968 Feb 10 21:14 tslint.json
+~ $ exit
+exit
+[Sat Feb 10 13:28:59] demo-nextjs-v5 $ 
+```
+
+##### npm run heroku:logs
+This command will show you the most recent logs from your Heroku application.
+
+In the example below, note that we are seeing logs for all of Heroku assets including:
+
++ Our `web` process - as declared in our `Procfile`
++ The one-off process we ran with our bash script (above) - `run.8505`
+
+```sh
+2018-02-10T21:15:45.460734+00:00 heroku[web.1]: State changed from up to starting
+2018-02-10T21:14:39.000000+00:00 app[api]: Build succeeded
+2018-02-10T21:15:46.371985+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2018-02-10T21:15:46.470176+00:00 heroku[web.1]: Process exited with status 143
+2018-02-10T21:15:51.706883+00:00 heroku[web.1]: Starting process with command `npm run start`
+2018-02-10T21:15:53.897899+00:00 app[web.1]: 
+2018-02-10T21:15:53.897916+00:00 app[web.1]: > demo-nextjs-v5@0.0.0 start /app
+2018-02-10T21:15:53.897918+00:00 app[web.1]: > NODE_ENV=production node server.js -p $PORT
+2018-02-10T21:15:53.897920+00:00 app[web.1]: 
+2018-02-10T21:15:54.615032+00:00 app[web.1]: > Ready on http://localhost:48693
+2018-02-10T21:15:54.827549+00:00 heroku[web.1]: State changed from starting to up
+2018-02-10T21:16:02.547447+00:00 heroku[router]: at=info method=GET path="/" host=demo-nextjs5.herokuapp.com request_id=cfec0645-12d6-426d-b621-3f2ee288c976 fwd="71.231.84.146" dyno=web.1 connect=1ms service=150ms status=200 bytes=2112 protocol=https
+2018-02-10T21:16:02.754269+00:00 heroku[router]: at=info method=GET path="/_next/ac03bee3-59d2-4a1c-a0f8-3fe13d0e7376/page/index.js" host=demo-nextjs5.herokuapp.com request_id=95ad7956-5030-4aa8-a60a-20f7a8b2ed98 fwd="71.231.84.146" dyno=web.1 connect=1ms service=14ms status=200 bytes=842 protocol=https
+2018-02-10T21:16:02.866598+00:00 heroku[router]: at=info method=GET path="/_next/static/style.css" host=demo-nextjs5.herokuapp.com request_id=8cd182f2-f42e-4f95-add4-589b249bee14 fwd="71.231.84.146" dyno=web.1 connect=1ms service=14ms status=404 bytes=2654 protocol=https
+2018-02-10T21:16:02.968406+00:00 heroku[router]: at=info method=GET path="/_next/ac03bee3-59d2-4a1c-a0f8-3fe13d0e7376/page/_error.js" host=demo-nextjs5.herokuapp.com request_id=328aba99-dbae-4223-a1cb-5ca7fa5766db fwd="71.231.84.146" dyno=web.1 connect=1ms service=4ms status=200 bytes=5204 protocol=https
+2018-02-10T21:16:03.068829+00:00 heroku[router]: at=info method=GET path="/_next/8440abd45174b3d5c8841dd3da4ac4bf/app.js" host=demo-nextjs5.herokuapp.com request_id=d5281312-94b0-4f8f-805d-c1611a9d09d5 fwd="71.231.84.146" dyno=web.1 connect=1ms service=11ms status=200 bytes=211138 protocol=https
+2018-02-10T21:16:06.241228+00:00 heroku[router]: at=info method=GET path="/_next/ac03bee3-59d2-4a1c-a0f8-3fe13d0e7376/page/ping.js" host=demo-nextjs5.herokuapp.com request_id=e70432d7-f7fd-4fcc-acf9-8bdb2b44d729 fwd="71.231.84.146" dyno=web.1 connect=2ms service=6ms status=200 bytes=1138 protocol=https
+2018-02-10T21:16:11.760415+00:00 heroku[router]: at=info method=GET path="/_next/ac03bee3-59d2-4a1c-a0f8-3fe13d0e7376/page/redux.js" host=demo-nextjs5.herokuapp.com request_id=9db8f477-8ddb-476d-89fc-1114c6a10147 fwd="71.231.84.146" dyno=web.1 connect=1ms service=7ms status=200 bytes=104342 protocol=https
+2018-02-10T21:28:35.467840+00:00 app[api]: Starting process with command `bash` by user rob@therobbrennan.com
+2018-02-10T21:28:41.274979+00:00 heroku[run.8505]: Awaiting client
+2018-02-10T21:28:41.318132+00:00 heroku[run.8505]: Starting process with command `bash`
+2018-02-10T21:28:41.536376+00:00 heroku[run.8505]: State changed from starting to up
+2018-02-10T21:28:59.211667+00:00 heroku[run.8505]: Process exited with status 0
+2018-02-10T21:28:59.226888+00:00 heroku[run.8505]: State changed from up to complete
+```
+
+##### npm run heroku:logs:tail 
+This command is similar to `npm run heroku:logs` - with the only difference being that this tails the live output of all Heroku logs for your application. You can cancel or interrupt this at any point with CTRL+C.
+
 # Feedback
 Please feel free to [create an issue](https://github.com/TheRobBrennan/demo-nextjs-v5/issues) if you have a question or idea for this project.
