@@ -118,7 +118,6 @@ All three of these custom routes render the `ping.tsx` page with the appropriate
 + /people/developers
 + /people/developers/Rob
 
-
 ## Development
 To verify NextJS is running in development mode, you can simply run:
 
@@ -187,6 +186,18 @@ To verify NextJS is running in production mode, you can simply run:
     $ npm run start
 
 To verify the ExpressJS server is running in development mode, you should be able to see a response from [http://localhost:3000/test](http://localhost:3000/test) to verify the back-end Express server is running.
+
+## Third party services
+### Heroku
+For advanced users, this project is ready for you to deploy to Heroku. All you need to do is create your Heroku app and deploy as usual. 
+
+If you are familiar with this process, here is how you would create a new app on Heroku (free) using their [command-line tool](https://devcenter.heroku.com/articles/heroku-cli) for your account - where <APP_NAME> is whatever you want to call the application on Heroku:
+
+    $ heroku create <APP_NAME>
+
+To deploy your app to Heroku, you can use the quick helper script I created. This script has the benefit of determining what branch you are on, and automatically deploying that as the master branch to your Heroku app:
+
+    $ npm run deploy
 
 # Feedback
 Please feel free to [create an issue](https://github.com/TheRobBrennan/demo-nextjs-v5/issues) if you have a question or idea for this project.
