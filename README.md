@@ -17,7 +17,6 @@ To verify the ExpressJS server is running in development mode, you should be abl
 
 ### Testing
 This project uses [jest](https://facebook.github.io/jest/) and [enzyme](http://airbnb.io/enzyme/) for testing your React application - and should have 100% code coverage:
-![Code coverage](static/code-coverage.jpg)
 
 If you are not seeing 100% code coverage, that is sad...truly sad. Let's figure out a way to make sure we have a testable design instead of some crap that "just works...until it doesn't."
 
@@ -52,7 +51,37 @@ Similar to `npm run test`, this script will run any file(s) that matches the pat
 This script should be your best friend. It will quietly sit in the background as you make changes and run tests that are affiliated with any and all files you modify.
 
 #### npm run test:coverage
-This script will allow you to see how much test coverage you have for your project. Strive for 100% coverage. You will make yourself a better developer.
+This script will allow you to see how much test coverage you have for your project. The goal of this project is to strive for 100% coverage. Certain files will be excluded from this report (see `jest-config.js`).
+
+```sh
+
+ PASS  pages/redux.test.tsx
+ PASS  redux/enthusiasm/actions/index.test.tsx
+ PASS  redux/enthusiasm/reducers/index.test.tsx
+ PASS  pages/index.test.tsx
+ PASS  pages/ping.test.tsx
+--------------------------|----------|----------|----------|----------|----------------|
+File                      |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+--------------------------|----------|----------|----------|----------|----------------|
+All files                 |      100 |      100 |      100 |      100 |                |
+ components/App           |      100 |      100 |      100 |      100 |                |
+  App.tsx                 |      100 |      100 |      100 |      100 |                |
+ pages                    |      100 |      100 |      100 |      100 |                |
+  index.tsx               |      100 |      100 |      100 |      100 |                |
+  ping.tsx                |      100 |      100 |      100 |      100 |                |
+ redux/enthusiasm/actions |      100 |      100 |      100 |      100 |                |
+  index.tsx               |      100 |      100 |      100 |      100 |                |
+ redux/enthusiasm/types   |      100 |      100 |      100 |      100 |                |
+  enthusiasm.ts           |      100 |      100 |      100 |      100 |                |
+  initialState.ts         |      100 |      100 |      100 |      100 |                |
+--------------------------|----------|----------|----------|----------|----------------|
+
+Test Suites: 5 passed, 5 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        3.56s
+Ran all test suites.
+```
 
 #### npm run test:coverage:view
 Similar to the above command, this script will run the code coverage test and open up your browser (on the Mac only) to view an interactive report to see what code is and is not covered adequately.
