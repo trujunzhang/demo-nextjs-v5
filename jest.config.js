@@ -10,7 +10,6 @@ module.exports = {
     '!jest.config.js',
     '!jest.setup.js',
     '!next.config.js',
-    '!server.js',
     '**/*.{js,jsx,ts,tsx}',
     '!coverage/**'
   ],
