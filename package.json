@@ -18,7 +18,6 @@
     "dev": "npm run build && node server.ts -p $PORT",
     "postbuild": "cp ./server.ts .next/server.ts && cp -r static .next/static",
     "build": "./node_modules/.bin/next build",
-    "prestart": "npm run build",
     "start": "NODE_ENV=production node server.ts -p $PORT",
     "test": "./node_modules/.bin/jest --no-cache",
     "test:debug": "./node_modules/.bin/jest --debug",
