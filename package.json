@@ -26,6 +26,9 @@
     "test:coverage:view": "npm test -- --coverage --no-cache && open coverage/lcov-report/index.html",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
+  "pre-commit": [
+    "tslint"
+  ],  
   "dependencies": {
     "@types/enzyme": "^3.1.8",
     "@types/jest": "^22.1.1",
@@ -42,5 +45,8 @@
     "tslint": "^5.9.1",
     "typescript": "^2.7.1",
     "typescript-babel-jest": "^1.0.5"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
   }
 }
