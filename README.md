@@ -9,6 +9,7 @@ This project even uses `tslint` to make sure the code is clean before a commit c
 
 KNOWN ISSUES:
 + NextJS v5 is currently in its early preview stages. DO NOT USE this for production...yet.
++ SCSS is working for dev mode but NOT for production
 + Redux is connected and works within the app; but it DOES NOT WORK with simple testing...why? `pages/redux.test.tsx` has a test that calls attention to this for the time being.
 
 ## Development
