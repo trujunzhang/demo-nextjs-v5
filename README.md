@@ -99,12 +99,15 @@ Time:        4.385s
 ```
 
 #### npm run test:coverage:view
-Similar to the above command, this script will run the code coverage test and open up your browser (on the Mac only) to view an interactive report to see what code is and is not covered adequately.
+Similar to the above command, this script will run the code coverage test and open up your browser (on the Mac only) to view an interactive report to see what code is and is not covered adequately:
+
+![Test coverage](static/code-coverage.png)
 
 Don't have a Mac? No problem. Fire up your favorite web browser and open [coverage/lcov-report/index.html](coverage/lcov-report/index.html)
 
 ## Production
 To verify NextJS is running in production mode, you can simply run:
+
     $ npm run start
 
 To verify the ExpressJS server is running in development mode, you should be able to see a response from [http://localhost:3000/test](http://localhost:3000/test) to verify the back-end Express server is running.
