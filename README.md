@@ -295,5 +295,10 @@ In the example below, note that we are seeing logs for all of Heroku assets incl
 ##### npm run heroku:logs:tail 
 This command is similar to `npm run heroku:logs` - with the only difference being that this tails the live output of all Heroku logs for your application. You can cancel or interrupt this at any point with CTRL+C.
 
+### Codeship CI/CD
+This project uses Codeship Continuous Integration and Continuous Deployment - installed as an add-on to the Heroku app.
+
+If you are installing on Heroku, you'll want to make sure you have defined the appropriate HEROKU_API_KEY config variable.
+
 # Feedback
 Please feel free to [create an issue](https://github.com/TheRobBrennan/demo-nextjs-v5/issues) if you have a question or idea for this project.
