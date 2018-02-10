@@ -16,6 +16,14 @@ To verify NextJS is running in development mode, you can simply run:
 
 To verify the ExpressJS server is running in development mode, you should be able to see a response from [http://localhost:3000/test](http://localhost:3000/test) to verify the back-end Express server is running.
 
+### What's in the bundle?
+This project includes a helper script that will enable you to interactively explore what is contained within your production app. Simply run:
+
+#### Bundle size
+```sh
+$ npm run analyze
+```
+
 ### Testing
 This project uses [jest](https://facebook.github.io/jest/) and [enzyme](http://airbnb.io/enzyme/) for testing your React application - and should have 100% code coverage:
 
