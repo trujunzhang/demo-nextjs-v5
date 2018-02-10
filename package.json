@@ -32,8 +32,6 @@
   "dependencies": {
     "@types/enzyme": "^3.1.8",
     "@types/jest": "^22.1.1",
-    "@types/next": "^2.4.7",
-    "@types/next-redux-wrapper": "^1.3.6",
     "@zeit/next-sass": "0.0.9",
     "@zeit/next-typescript": "0.0.8",
     "enzyme": "^3.3.0",
