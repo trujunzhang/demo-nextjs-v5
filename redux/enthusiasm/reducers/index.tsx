@@ -3,7 +3,7 @@ import { EnthusiasmAction, INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '..
 import Enthusiasm from '../types/enthusiasm';
 import { INITIAL_STATE } from '../types/initialState';
 
-export function enthusiasm(state: Enthusiasm = INITIAL_STATE, action: EnthusiasmAction): Enthusiasm {
+export function enthusiasm(state: Enthusiasm = INITIAL_STATE, action: EnthusiasmAction | Object): Enthusiasm {
   const actionType = _.get(action, 'type');
 
   switch (true) {
