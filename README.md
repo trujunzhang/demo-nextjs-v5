@@ -5,7 +5,7 @@ This is a simple demo to explore NextJS v5 with support for:
 + [TypeScript](https://www.typescriptlang.org)
 + [Webpack](https://webpack.js.org)
 
-This project even uses `tslint` to make sure the code is clean before a commit can even occur.
+This project even uses [tslint](https://palantir.github.io/tslint/) and [pre-commit](https://www.npmjs.com/package/pre-commit) to make sure the code is clean before a commit can even occur.
 
 ## Development
 To verify NextJS is running in development mode, you can simply run:
