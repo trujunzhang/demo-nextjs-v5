@@ -5,7 +5,7 @@ import { RootState } from '../redux/store/root-state';
 import { Props } from '../redux/enthusiasm/types/enthusiasm';
 import { Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as withRedux from 'next-redux-wrapper';
+import withRedux from 'next-redux-wrapper';
 import { initStore } from '../redux/store/index';
 
 export class Redux extends React.Component<Props> {
