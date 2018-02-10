@@ -3,6 +3,7 @@ This is a simple demo to explore NextJS v5 with support for:
 + Jest / Enzyme
 + Redux
 + TypeScript
++ Webpack
     
 This project even uses `tslint` to make sure the code is clean before a commit can even occur.
 
@@ -19,6 +20,9 @@ This project includes a helper script that will enable you to interactively expl
 ```sh
 $ npm run analyze
 ```
+
+This will generate an interactive tool to see what the generated bundles for your app contain:
+![Bundle Analysis](static/analyze.png)
 
 ### Testing
 This project uses [jest](https://facebook.github.io/jest/) and [enzyme](http://airbnb.io/enzyme/) for testing your React application - and should have 100% code coverage:
