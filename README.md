@@ -2,13 +2,9 @@
 This is a simple demo to explore NextJS v5 with support for:
 + Jest / Enzyme
 + Redux
-+ SASS
 + TypeScript
     
 This project even uses `tslint` to make sure the code is clean before a commit can even occur.
-
-KNOWN ISSUES:
-+ SCSS has a bug which only retains the last processed SCSS file. Currently discussing this with Zeit.
 
 ## Development
 To verify NextJS is running in development mode, you can simply run:
