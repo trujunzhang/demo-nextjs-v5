@@ -8,23 +8,6 @@ import { bindActionCreators } from 'redux';
 import * as withRedux from 'next-redux-wrapper';
 import { initStore } from '../redux/store/index';
 
-const style = `
-  img {
-    width: 300px;
-    height: 300px;
-    }
-  h1 {
-    font-family: Arial;
-  }
-  .myDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-`;
-
 export class Redux extends React.Component<Props> {
   render() {
     const { enthusiasm, onIncrement, onDecrement } = this.props;
@@ -43,7 +26,6 @@ export class Redux extends React.Component<Props> {
             {JSON.stringify(this.props)}
           </pre>
         </div>
-        <style>{style}</style>
       </App>
     );
   }
