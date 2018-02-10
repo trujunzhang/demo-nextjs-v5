@@ -25,7 +25,10 @@
     "test:watch": "./node_modules/.bin/jest --watch",
     "test:coverage": "npm test -- --coverage --no-cache",
     "test:coverage:view": "npm test -- --coverage --no-cache && open coverage/lcov-report/index.html",
-    "tslint": "tslint -c tslint.json -p tsconfig.json"
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "heroku-postbuild": "npm run build",
+    "deploy": "git push heroku $(git rev-parse --abbrev-ref HEAD):master",
+    "deploy:force": "git push -f heroku $(git rev-parse --abbrev-ref HEAD):master"    
   },
   "pre-commit": [
     "tslint"
