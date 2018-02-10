@@ -8,7 +8,29 @@ import { bindActionCreators } from 'redux';
 import withRedux from 'next-redux-wrapper';
 import { initStore } from '../redux/store/index';
 
+interface ReduxStore {
+  dispatch: Function;
+  getState: Function;
+}
+
+interface ReduxWrapper {
+  store: ReduxStore;
+  isServer: boolean;
+}
+
 export class Redux extends React.Component<Props> {
+  static getInitialProps({ store, isServer }: ReduxWrapper) {
+    if (isServer) {
+      // For examples of async actions, check out 
+      //  https://github.com/kirill-konshin/next-redux-wrapper#async-actions-in-getinitialprops
+      store.dispatch(actions.incrementEnthusiasm());
+      store.dispatch(actions.incrementEnthusiasm());
+      store.dispatch(actions.incrementEnthusiasm());
+      store.dispatch(actions.incrementEnthusiasm());
+    }
+    return { custom: 'customText' };
+  }
+
   render() {
     const { enthusiasm, onIncrement, onDecrement } = this.props;
     return (
