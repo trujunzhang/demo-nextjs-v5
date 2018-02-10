@@ -19,3 +19,9 @@
 //     expect(wrapper).toBeDefined();
 //   });
 // });
+
+describe('The main Redux page', () => {
+  it('cannot be tested until further investigation with NextJS 5 and next-redux-wrapper', () => {
+    expect(true).toEqual(true);
+  });
+});
