@@ -12,10 +12,7 @@ module.exports = {
     '!next.config.js',
     '!server.js',
     '**/*.{js,jsx,ts,tsx}',
-    '!coverage/**',
-    '!pages/redux*',
-    '!redux/enthusiasm/reducers/**',
-    '!redux/store/**'
+    '!coverage/**'
   ],
   transform: {
     '^.+\\.(ts|tsx|js|jsx)$': 'typescript-babel-jest'
