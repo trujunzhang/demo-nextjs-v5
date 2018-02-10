@@ -4,10 +4,12 @@ This is a simple demo to explore NextJS v5 with support for:
 + Redux
 + SASS
 + TypeScript
+    
+This project even uses `tslint` to make sure the code is clean before a commit can even occur.
 
 KNOWN ISSUES:
 + NextJS v5 is currently in its early preview stages. DO NOT USE this for production...yet.
-+ Redux is connected and works within the app; but it DOES NOT WORK with simple testing...why?
++ Redux is connected and works within the app; but it DOES NOT WORK with simple testing...why? `pages/redux.test.tsx` has a test that calls attention to this for the time being.
 
 ## Development
 To verify NextJS is running in development mode, you can simply run:
