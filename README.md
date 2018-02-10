@@ -60,48 +60,12 @@ This script should be your best friend. It will quietly sit in the background as
 #### npm run test:coverage
 This script will allow you to see how much test coverage you have for your project. Certain files may be excluded from this report (see `collectCoverageFrom` in `jest-config.js`) for more details.
 
-```sh
-
- PASS  redux/enthusiasm/actions/index.test.tsx
- PASS  redux/enthusiasm/reducers/index.test.tsx
- PASS  redux/store/index.test.tsx
- PASS  pages/ping.test.tsx
- PASS  pages/index.test.tsx
- PASS  pages/redux.test.tsx
----------------------------|----------|----------|----------|----------|----------------|
-File                       |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
----------------------------|----------|----------|----------|----------|----------------|
-All files                  |    90.85 |     72.5 |    88.89 |    95.92 |                |
- components/App            |      100 |      100 |      100 |      100 |                |
-  App.tsx                  |      100 |      100 |      100 |      100 |                |
- pages                     |    91.76 |    69.39 |    88.89 |    90.91 |                |
-  index.tsx                |      100 |      100 |      100 |      100 |                |
-  ping.tsx                 |      100 |      100 |      100 |      100 |                |
-  redux.tsx                |    89.23 |    63.41 |    85.71 |     87.5 |          31,36 |
- redux/enthusiasm/actions  |      100 |      100 |      100 |      100 |                |
-  index.tsx                |      100 |      100 |      100 |      100 |                |
- redux/enthusiasm/reducers |    75.86 |    68.42 |    66.67 |      100 |                |
-  index.tsx                |    75.86 |    68.42 |    66.67 |      100 |            1,4 |
- redux/enthusiasm/types    |      100 |      100 |      100 |      100 |                |
-  enthusiasm.ts            |      100 |      100 |      100 |      100 |                |
-  initialState.ts          |      100 |      100 |      100 |      100 |                |
- redux/store               |      100 |     87.5 |      100 |      100 |                |
-  index.tsx                |      100 |     87.5 |      100 |      100 |              5 |
-  root-action.ts           |      100 |      100 |      100 |      100 |                |
-  root-reducer.ts          |      100 |      100 |      100 |      100 |                |
-  root-state.ts            |      100 |      100 |      100 |      100 |                |
----------------------------|----------|----------|----------|----------|----------------|
-
-Test Suites: 6 passed, 6 total
-Tests:       13 passed, 13 total
-Snapshots:   0 total
-Time:        4.385s
-```
+![Code coverage](static/code-coverage-command-line.png)
 
 #### npm run test:coverage:view
 Similar to the above command, this script will run the code coverage test and open up your browser (on the Mac only) to view an interactive report to see what code is and is not covered adequately:
 
-![Test coverage](static/code-coverage.png)
+![Code coverage](static/code-coverage.png)
 
 Don't have a Mac? No problem. Fire up your favorite web browser and open [coverage/lcov-report/index.html](coverage/lcov-report/index.html)
 
