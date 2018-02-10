@@ -18,7 +18,6 @@
     "dev": "npm run build && node server.js -p $PORT",
     "postbuild": "cp ./server.js .next/server.js && cp -r static .next/static",
     "build": "./node_modules/.bin/next build",
-    "prestart": "npm run build",
     "start__": "NODE_ENV=production node server.js -p $PORT",
     "start": "./node_modules/.bin/next start",
     "test": "./node_modules/.bin/jest --no-cache",
