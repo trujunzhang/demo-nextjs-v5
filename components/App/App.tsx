@@ -25,6 +25,7 @@ export default ({ children }) => {
         <Link as={`/people/developers/rob`} href={`/ping?slug=developers&name=rob`}>
         <a>Rob</a>
       </Link>&nbsp;
+      <Link href={'/redux'}><a>Redux</a></Link>&nbsp;
       {children}
     </div>
   );
