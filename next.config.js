@@ -7,7 +7,7 @@ module.exports = withTs(withSass({
   webpack: function (config) {
     if (ANALYZE) {
       config.plugins.push(new BundleAnalyzerPlugin({
-        analyzerMode: 'server',
+        analyzerMode: 'static',
         analyzerPort: 8888,
         openAnalyzer: true
       }))
