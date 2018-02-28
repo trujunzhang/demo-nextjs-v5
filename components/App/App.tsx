@@ -12,8 +12,9 @@ export default ({ children }) => {
 
           Please see the link below for more information:
           https://github.com/zeit/next-plugins/tree/master/packages/next-sass#production-usage
+
+          <link rel="stylesheet" href="/_next/static/style.css" />
         */}
-        <link rel="stylesheet" href="/_next/static/style.css" />
       </Head>
       <Link href={'/'}><a>Home</a></Link>&nbsp;
       <Link as={`/people`} href={`/ping`}><a>People</a></Link>&nbsp;

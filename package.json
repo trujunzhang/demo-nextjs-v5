@@ -15,10 +15,10 @@
   },
   "scripts": {
     "analyze": "./node_modules/.bin/cross-env ANALYZE=1 npm run build",
-    "dev": "npm run build && node server.ts -p $PORT",
-    "postbuild": "cp ./server.ts .next/server.ts && cp -r static .next/static",
+    "dev": "npm run build && NODE_ENV=development node .next/server.js -p $PORT",
+    "postbuild": "tsc --module commonjs && cp -r static .next/",
     "build": "./node_modules/.bin/next build",
-    "start": "NODE_ENV=production node server.ts -p $PORT",
+    "start": "NODE_ENV=production node .next/server.js -p $PORT",
     "test": "./node_modules/.bin/jest --no-cache",
     "test:debug": "./node_modules/.bin/jest --debug",
     "test:verbose": "./node_modules/.bin/jest --verbose",
