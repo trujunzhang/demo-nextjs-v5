@@ -21,6 +21,10 @@
       "dom",
       "es2015",
       "es2016"
-    ]
-  }
+    ],
+    "outDir": ".next/"
+  },
+  "include": [
+    "server/**/*.ts"
+  ]
 }

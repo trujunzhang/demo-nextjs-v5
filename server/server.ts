@@ -1,10 +1,15 @@
-const express = require('express');
-const next = require('next');
+import * as express from 'express';
+import * as next from 'next';
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
 const handle = app.getRequestHandler();
+
+type APIResponse = {
+  success: boolean;
+  message: string;
+};
 
 app.prepare()
   .then(() => {
@@ -37,7 +42,7 @@ app.prepare()
     });
 
     server.get('/test', (_, res) => { // Does not use NextJS app at all
-      const result = { success: true, message: 'Back-end server is online.' };
+      const result: APIResponse = { success: true, message: 'Back-end server is online.' };
       return res.json(result);
     });
 
