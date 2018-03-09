@@ -1,3 +1,4 @@
+require('newrelic');
 import * as express from 'express';
 import * as next from 'next';
 
