@@ -19,7 +19,7 @@
     "postbuild": "cp -r static .next/",
     "clean": "rm -rf .next/",
     "build": "npm run clean && next build && tsc --project tsconfig.server.json",
-    "start": "npm run build && NODE_ENV=production node production-server/server.js -p $PORT",
+    "start": "NODE_ENV=production node production-server/server.js -p $PORT",
     "test": "./node_modules/.bin/jest --no-cache",
     "test:debug": "./node_modules/.bin/jest --debug",
     "test:verbose": "./node_modules/.bin/jest --verbose",
