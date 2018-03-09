@@ -51,7 +51,6 @@ app.prepare()
     });
 
     server.listen(port, (err) => {
-      // console.log(`Server listening on port ${port}`);
       if (err) { throw err; }
     });
   });
