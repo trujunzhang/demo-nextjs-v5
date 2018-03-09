@@ -3,7 +3,7 @@ import * as next from 'next';
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dir: '.', dev });
+const app = next({ dev });
 const handle = app.getRequestHandler();
 
 type APIResponse = {
@@ -17,7 +17,7 @@ app.prepare()
 
     server.get('/people', (req, res) => {
       const actualPage = '/ping';
-      const queryParams = { };
+      const queryParams = {};
       app.render(req, res, actualPage, queryParams);
     });
 

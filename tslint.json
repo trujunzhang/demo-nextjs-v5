@@ -32,10 +32,7 @@
             120
         ],
         "member-ordering": [
-            true,
-            "public-before-private",
-            "static-before-instance",
-            "variables-before-functions"
+            true
         ],
         "no-any": true,
         "no-arg": true,
