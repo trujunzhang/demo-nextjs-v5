@@ -9,9 +9,11 @@ module.exports = {
   collectCoverageFrom: [
     '!jest.config.js',
     '!jest.setup.js',
+    '!newrelic.js',
     '!next.config.js',
     '**/*.{js,jsx,ts,tsx}',
-    '!coverage/**'
+    '!coverage/**',
+    '!production-server/**'
   ],
   transform: {
     '^.+\\.(ts|tsx|js|jsx)$': 'typescript-babel-jest'

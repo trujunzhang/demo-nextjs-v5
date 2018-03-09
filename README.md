@@ -21,7 +21,7 @@ There are a few key things that I wanted to achieve with this demo:
 + Incorporate the new NextJS 5 with TypeScript and Redux
     - Incorporate Redux DevTools for viewing and debugging the Redux store
 + Incorporate Jest and Enzyme for testing the application
-    - My original goal was to have as close to 100% test coverage as REASONABLY POSSIBLE
+    - My original goal was to have as much test coverage as REASONABLY POSSIBLE
 + Incorporate a back-end [ExpressJS](http://expressjs.com) server for handling custom server routes
 
 Let's dive into these a bit more...or feel free to skip ahead to "Development".
