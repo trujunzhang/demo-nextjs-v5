@@ -307,7 +307,7 @@ If you do wish to use New Relic, please be sure that you update the `newrelic.js
 Once you have added the New Relic resource to the Heroku app, getting started with New Relic APM is pretty straightforward with the Heroku CLI tool:
 
 ```sh
-$ heroku config:set NEW_RELIC_APP_NAME='[DEMO] NextJS/TypeScript'
+$ heroku config:set NEW_RELIC_APP_NAME='DEMO: NextJS 5'
 $ heroku config:set NEW_RELIC_NO_CONFIG_FILE='true'
 ```
 
