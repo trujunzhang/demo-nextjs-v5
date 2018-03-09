@@ -300,5 +300,48 @@ This project uses Codeship Continuous Integration and Continuous Deployment - in
 
 If you are installing on Heroku, you'll want to make sure you have defined the appropriate HEROKU_API_KEY config variable.
 
+### New Relic
+If you do wish to use New Relic, please be sure that you update the `newrelic.js` file with your specific information. While working with environment variables is handy, you'll want to have that file available for local development (unless, of course, you are incorporating environment variables into the app).
+
+#### APM
+Once you have added the New Relic resource to the Heroku app, getting started with New Relic APM is pretty straightforward with the Heroku CLI tool:
+
+```sh
+$ heroku config:set NEW_RELIC_APP_NAME='[DEMO] NextJS/TypeScript'
+$ heroku config:set NEW_RELIC_NO_CONFIG_FILE='true'
+```
+
+To verify you have New Relic configured correctly:
+
+```sh
+$ heroku config
+```
+
+Once New Relic is configured, you can add it to the project:
+
+```sh
+$ npm install newrelic --save
+```
+
+Lastly, add `require('newrelic')` to the main server file and voila! Fire up the application, and within a few minutes you will see New Relic capturing data on server performance.
+
+For more information, please refer to [Node.js agent and Heroku](https://docs.newrelic.com/docs/agents/nodejs-agent/hosting-services/nodejs-agent-heroku)
+
+#### Browser
+To setup New Relic for performance monitoring of your user's experience, there are a few quick and easy steps to follow:
+
+1) Click "+ Add More" to create a new Browser application
+2) For choosing a deployment method, please select "Copy/Paste Javascript code"
+3) Name your app
+4) Click "Enable"
+5) Step 3 will appear, which is the script you will need to add to your application. For our app, we are looking at `App.tsx` and replacing the current contents of the script in our `<Head>...</Head>` section.
+
+Fire up the application, and within a few minutes you will see New Relic capturing data on server performance.
+
+#### Synthetics
+For monitoring the app, New Relic Synthetics is a quick and easy way to get started. Simply create a new monitor to ping your web application. You will receive email notifications when the app is down, when the alert was acknowledged by you (or someone on your team), and when the alert has been resolved.
+
+To verify, go into your Heroku dashboard and temporarily turn off your dyno. Within a few minutes, you should see emails alerting you of the problem. Don't forget to turn it back on!
+
 # Feedback
 Please feel free to [create an issue](https://github.com/TheRobBrennan/demo-nextjs-v5/issues) if you have a question or idea for this project.
